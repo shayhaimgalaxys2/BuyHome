@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1008607807748",
+    "project_id": "buyhome-695c6",
+    "storage_bucket": "buyhome-695c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008607807748:android:fb6c82c187bcf6b3e12851",
+        "android_client_info": {
+          "package_name": "il.co.buyhome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008607807748-iq9069h111sc4824jab8jtctkftlibs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPuv0UMKe0cU9r5DZ7JyQVwu4ItSpkNrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008607807748-iq9069h111sc4824jab8jtctkftlibs1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
