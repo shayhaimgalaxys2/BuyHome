@@ -1,9 +1,0 @@
-il/co/buyhome/MainActivity.java
- il.co.buyhome.MainActivity
- il.co.buyhome.MainActivity$1
-il/co/buyhome/SplashScreen.java
- il.co.buyhome.SplashScreen
-il/co/buyhome/App.java
- il.co.buyhome.App
-il/co/buyhome/BuildConfig.java
- il.co.buyhome.BuildConfig
