@@ -16,12 +16,10 @@
         android:theme="@android:style/Theme.Light.NoTitleBar">
         <activity
             android:name="il.co.buyhome.MainActivity"
-            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="il.co.buyhome.SplashScreen"
-            android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:exported="true">

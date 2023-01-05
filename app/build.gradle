@@ -13,6 +13,15 @@ android {
         versionName "1.0"
     }
 
+    signingConfigs {
+        signingRelease {
+            storeFile file("/Users/cal/StudioProjects/BuyHome/key")
+            storePassword "Evahaim1"
+            keyAlias "buyHomeKey"
+            keyPassword "Evahaim1"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -21,6 +30,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.signingRelease
         }
     }
 }
@@ -39,7 +49,7 @@ dependencies {
     implementation "com.google.firebase:firebase-messaging:23.1.1"
     implementation "com.google.android.gms:play-services-instantapps:18.0.1"
 
-    implementation 'com.pushwoosh:pushwoosh:6.3.0'
-    implementation 'com.pushwoosh:pushwoosh-firebase:6.3.0'
+    implementation 'com.pushwoosh:pushwoosh:6.6.7'
+    implementation 'com.pushwoosh:pushwoosh-firebase:6.6.7'
 
 }

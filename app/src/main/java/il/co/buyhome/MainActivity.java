@@ -12,6 +12,8 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.pushwoosh.Pushwoosh;
+
 import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
@@ -32,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        Pushwoosh.getInstance().registerForPushNotifications();
         setContentView(R.layout.activity_main);
         webView = findViewById(R.id.webView);
         webView.setBackgroundColor(Color.TRANSPARENT);
         initWebView();
-
     }
 
     private void initProgressDialog() {

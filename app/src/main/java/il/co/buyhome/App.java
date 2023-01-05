@@ -16,8 +16,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         initialFCM();
-        Pushwoosh.getInstance().registerForPushNotifications();
-
     }
 
     private void initialFCM() {
