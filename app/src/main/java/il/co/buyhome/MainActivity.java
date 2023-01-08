@@ -12,6 +12,7 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.onesignal.OneSignal;
 import com.pushwoosh.Pushwoosh;
 
 import java.net.URISyntaxException;
@@ -35,11 +36,27 @@ public class MainActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         Pushwoosh.getInstance().registerForPushNotifications();
+//        initOneSignal();
         setContentView(R.layout.activity_main);
         webView = findViewById(R.id.webView);
         webView.setBackgroundColor(Color.TRANSPARENT);
         initWebView();
     }
+
+    private void initOneSignal() {
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(App.ONESIGNAL_APP_ID);
+
+        // promptForPushNotifications will show the native Android notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 7)
+        OneSignal.promptForPushNotifications();
+
+    }
+
 
     private void initProgressDialog() {
         progressDialog = new ProgressDialog(MainActivity.this, ProgressDialog.THEME_DEVICE_DEFAULT_LIGHT);

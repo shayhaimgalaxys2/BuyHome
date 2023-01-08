@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:targetSandboxVersion="2"
-    package="il.co.buyhome"
-    xmlns:dist="http://schemas.android.com/apk/distribution">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="il.co.buyhome">
 
     <dist:module dist:instant="true" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,36 +10,52 @@
         android:name=".App"
         android:allowBackup="false"
         android:icon="@drawable/app_icon"
-        android:roundIcon="@drawable/app_icon_round"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/app_icon_round"
         android:theme="@android:style/Theme.Light.NoTitleBar">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/app_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/blue" />
+
         <activity
             android:name="il.co.buyhome.MainActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name="il.co.buyhome.SplashScreen"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
-            <intent-filter  >
+            android:theme="@style/SplashTheme">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <intent-filter
-                android:autoVerify="true">
+            <intent-filter android:autoVerify="true">
 
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="http" android:host="buy-home.co.il" />
-            <data android:scheme="https" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="buy-home.co.il"
+                    android:scheme="http" />
+                <data android:scheme="https" />
             </intent-filter>
         </activity>
 
-        <meta-data android:name="com.pushwoosh.appid" android:value="27259-883DB" />
-        <meta-data android:name="com.pushwoosh.senderid" android:value="@string/fcm_sender_id" />
+        <meta-data
+            android:name="com.pushwoosh.appid"
+            android:value="27259-883DB" />
+        <meta-data
+            android:name="com.pushwoosh.senderid"
+            android:value="@string/fcm_sender_id" />
 
         <!--<service
             android:name=".NotificationsHandler"
