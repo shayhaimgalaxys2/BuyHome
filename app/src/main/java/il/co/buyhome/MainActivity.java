@@ -18,8 +18,6 @@ import com.pushwoosh.Pushwoosh;
 import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
-import im.delight.android.webview.AdvancedWebView;
-
 public class MainActivity extends AppCompatActivity {
 
     private static final String UTF_8 = "UTF-8";
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            if (url.equals(BUY_HOME_URL)) {
+            if (url.equals(BUY_HOME_URL) && progressDialog != null) {
                 progressDialog.dismiss();
             }
         }

@@ -2,6 +2,7 @@ package il.co.buyhome;
 
 import android.app.Application;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.installations.FirebaseInstallations;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.onesignal.OneSignal;
@@ -17,11 +18,12 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initialFCM();
+//        initialFCM();
     }
 
 
     private void initialFCM() {
+        FirebaseApp.initializeApp(this);
         FirebaseInstallations.getInstance().getId().addOnCompleteListener(task -> {
             if (task.isSuccessful() && task.getResult() != null) {
                 deviceId = task.getResult();
