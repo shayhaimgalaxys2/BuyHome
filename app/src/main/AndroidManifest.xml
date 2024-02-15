@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="il.co.buyhome">
+    xmlns:dist="http://schemas.android.com/apk/distribution">
 
     <dist:module dist:instant="true" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -22,6 +21,7 @@
             android:resource="@color/blue" />
 
         <activity
+            android:exported="false"
             android:name="il.co.buyhome.MainActivity"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
@@ -65,5 +65,4 @@
             </intent-filter>
         </service>-->
     </application>
-
 </manifest>
